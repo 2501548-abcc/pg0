@@ -1,0 +1,273 @@
+:root {
+    --main-bg: #f8f8f8;
+    --text-color: #333;
+    --header-footer-bg: #2c3e50;
+    --accent-color: #4CAF50;
+    --accent-hover: #388e3c;
+    --light-bg: #f0f5f9;
+    --light-blue: #a2d2ff;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --border-radius: 8px;
+    --font-jp: 'Noto Sans JP', sans-serif;
+    --font-en: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-jp);
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--main-bg);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* imgタグ全体への修正: 最大高さを設定して、画像が縦長になりすぎるのを防ぐ */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* 新規追加: 画像の最大高さをビューポートの高さの60%に制限 */
+    max-height: 60vh; /* ビューポートの高さの60%に制限 */
+    object-fit: contain; /* 画像が指定された領域内に収まるように調整 */
+}
+
+.fas,
+.fab {
+    margin-right: 8px;
+    color: inherit;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.content-section {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    /* margin-topとmargin-bottomを少し減らす */
+    margin-top: 20px; /* 30pxから修正 */
+    padding: 40px 20px;
+    margin-bottom: 20px; /* 30pxから修正 */
+}
+
+.section-heading {
+    font-family: var(--font-en);
+    font-size: 2.2em;
+    color: var(--header-footer-bg);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.site-header {
+    background-color: var(--header-footer-bg);
+    color: #fff;
+    /* paddingを少し減らす */
+    padding: 10px 0; /* 15pxから修正 */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+    font-family: var(--font-en);
+    font-size: 1.8em;
+    margin: 0 0 10px 0;
+}
+
+.site-title a {
+    color: #fff;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: #fff;
+    font-weight: 400;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease;
+    border-radius: 5px;
+}
+
+.main-nav a:hover {
+    color: var(--light-blue);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.main-nav a .fas {
+    color: #fff;
+}
+
+.main-nav a:hover .fas {
+    color: var(--light-blue);
+}
+
+.main-nav a.active {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.main-nav a.active .fas {
+    color: #fff;
+}
+
+.content-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: #555;
+    padding: 15px;
+    background-color: #fcfcfc;
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.03);
+}
+
+.content-text p {
+    margin-bottom: 1em;
+}
+
+.pet-intro {
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    /* margin-topとmargin-bottomを少し減らす */
+    margin: 20px auto 10px auto; /* 40px auto 20px auto から修正 */
+    max-width: 800px;
+}
+
+/* .pet-image と .hometown-image の共通設定を .hometown-image に統合 (今回は同じ値のため) */
+.hometown-image {
+    width: calc(33.33% - 15px); /* 3枚横並びの計算は維持 */
+    /* imgタグ全体にmax-heightが設定されるため、ここでは個別の高さは指定しない */
+    height: auto; /* 必要に応じて、ここをheight: 200px; などと固定しても良いが、その場合はmax-heightと衝突しないように注意 */
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.pet-image { /* もし.pet-image固有のスタイルが必要なら残す */
+    width: calc(25% - 11.25px); /* 元々ペットページ用で4枚横並びの計算 */
+    min-width: 150px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.pet-image:hover,
+.hometown-image:hover { /* 両方の画像にホバー効果を適用 */
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.site-footer {
+    background-color: var(--header-footer-bg);
+    color: #e0e0e0;
+    text-align: center;
+    /* paddingを少し減らす */
+    padding: 15px 0; /* 20px 0から修正 */
+    /* margin-topを少し減らす */
+    margin-top: 20px; /* 30pxから修正 */
+    font-size: .85em;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .site-title {
+        font-size: 1.5em;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    .main-nav li {
+        margin: 5px 0;
+    }
+    .main-nav a {
+        padding: 8px 10px;
+    }
+    .content-section {
+        padding: 30px 15px;
+        margin: 20px auto;
+    }
+    .section-heading {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .hometown-image {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hometown-image {
+        width: 100%;
+    }
+}
