@@ -1,0 +1,50 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.main-box {
+    width: 300px;
+    margin: 0 auto;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+input {
+    font-size: 20px;
+    width: 80px;
+    text-align: center;
+}
+
+#box-budou {
+    background-color: violet;
+    border: 2px solid black;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#box-cherry {
+    background-color: pink;
+    border: 2px solid black;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    font-size: 20px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.reset-area button {
+    background-color: gray;
+    color: white;
+}

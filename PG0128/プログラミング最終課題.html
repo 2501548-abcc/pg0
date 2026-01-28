@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>小役カウンター課題</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Webアプリ制作課題</h1>
+        <p>名前: <input type="text" placeholder="名前を入力してください"></p>
+    </header>
+
+    <div class="main-box">
+        <h2>スロット小役計算機</h2>
+
+        <div class="input-area">
+            <p>総回転数</p>
+            <input type="number" id="sou_kaiten" value="0"> G
+        </div>
+
+        <div class="koyaku-box" id="box-budou">
+            <h3>ブドウ</h3>
+            <p><span id="budou_num">0</span> 回</p>
+            <p>確率: 1 / <span id="budou_kakuritsu">0.0</span></p>
+            <button onclick="countBudou()">カウント</button>
+        </div>
+
+        <div class="koyaku-box" id="box-cherry">
+            <h3>チェリー</h3>
+            <p><span id="cherry_num">0</span> 回</p>
+            <p>確率: 1 / <span id="cherry_kakuritsu">0.0</span></p>
+            <button onclick="countCherry()">カウント</button>
+        </div>
+
+        <div class="reset-area">
+            <button onclick="resetData()">リセットする</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
